@@ -1,5 +1,2 @@
 ﻿  MainClient.cpp
-  TCPClient.cpp
-  Generating Code...
-C:\Users\Poggers\Documents\GitHub\Chat_App\Client\Client\TCPClient.cpp(34): warning C4715: 'TCPClient::Connect': not all control paths return a value
-  Client.vcxproj -> C:\Users\Poggers\Documents\GitHub\Chat_App\Client\Debug\Client.exe
+  Client.vcxproj -> C:\Users\AnnaOVO\Documents\GitHub\Chat_App\Client\Debug\Client.exe

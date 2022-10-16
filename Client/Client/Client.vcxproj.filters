@@ -13,30 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Core">
-      <UniqueIdentifier>{61fddee6-0136-4ec8-a46f-aebf16395607}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Core\Network">
-      <UniqueIdentifier>{9d7d273d-6c68-439a-a801-4ef111644662}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Core">
-      <UniqueIdentifier>{2e78778c-a17a-4891-afd0-7380a6017100}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Core\Network">
-      <UniqueIdentifier>{df142032-c338-4f4d-b7b0-271bdbbd0415}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainClient.cpp">
-      <Filter>Source Files\Core</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TCPClient.cpp">
-      <Filter>Source Files\Core\Network</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="TCPClient.h">
-      <Filter>Header Files\Core\Network</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

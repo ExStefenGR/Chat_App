@@ -13,30 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Core">
-      <UniqueIdentifier>{e7ab5be2-ce4b-43b4-bab7-208a86703e71}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Core">
-      <UniqueIdentifier>{ae6fae0e-ab52-4477-b1a0-98d28f6825d7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Core\Network">
-      <UniqueIdentifier>{30f0d487-0141-4736-9fe4-e663bcb5ebaf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Core\Network">
-      <UniqueIdentifier>{cf563ca2-5c5a-43cc-a96b-07dc312ea7db}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainHost.cpp">
-      <Filter>Source Files\Core</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TCPHost.cpp">
-      <Filter>Source Files\Core\Network</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="TCPHost.h">
-      <Filter>Header Files\Core\Network</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
