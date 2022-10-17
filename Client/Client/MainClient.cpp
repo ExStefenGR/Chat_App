@@ -12,9 +12,8 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 	TCPClient clientConnection;
-	clientConnection.Connect();
-	SDLNet_Quit();
+	clientConnection.Initialise();
+	clientConnection.ReceiveMessage();
 	SDL_Quit();
-	system("pause");
 	return 0;
 }

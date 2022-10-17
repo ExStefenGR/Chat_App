@@ -5,13 +5,17 @@ constexpr auto PORT = 1234;
 class TCPClient
 {
 public:
-	TCPClient();
+	TCPClient() = default;
 	~TCPClient();
 
-	int Connect();
+	bool Initialise();
+	void Shutdown();
+
 	void SendMessage();
+	void ReceiveMessage();
+
 
 private:
-	IPaddress ip{};
-	TCPsocket socket{};
+	IPaddress m_ip{};
+	TCPsocket m_socket{};
 };
