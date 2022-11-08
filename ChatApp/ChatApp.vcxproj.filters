@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Host">
+      <UniqueIdentifier>{0471b012-e632-45ee-9c20-ca04dadd9d7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Client">
+      <UniqueIdentifier>{9b31705c-8bd0-4a06-99cf-147bafd40fe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Client">
+      <UniqueIdentifier>{fb4bca94-94c0-4aa4-bc78-a127888c6d25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Host">
+      <UniqueIdentifier>{99f08f2f-d9d1-4e45-8fc7-0a63a113e486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TCP">
+      <UniqueIdentifier>{272168e4-a38d-4363-b2db-647e3a141f8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TCP">
+      <UniqueIdentifier>{3aff4275-5703-4f97-b7a2-33b0a4db0202}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\Host.cpp">
+      <Filter>Source Files\Host</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\Client.cpp">
+      <Filter>Source Files\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\TCP.cpp">
+      <Filter>Source Files\TCP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\source\repos\ChatApp\ChatApp\Client.h">
+      <Filter>Header Files\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\repos\ChatApp\ChatApp\Host.h">
+      <Filter>Header Files\Host</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\repos\ChatApp\ChatApp\TCP.h">
+      <Filter>Header Files\TCP</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
