@@ -1,3 +1,4 @@
-﻿  TCPHost.cpp
-C:\Users\Stefanos Triantafyll\Documents\GitHub\Chat_App\Host\Host\TCPHost.cpp(108,19): warning C5056: operator '==': deprecated for array types
-  Project1.vcxproj -> C:\Users\Stefanos Triantafyll\Documents\GitHub\Chat_App\Client\Debug\Host.exe
+﻿  MainHost.cpp
+  TCPHost.cpp
+  Generating Code...
+  Project1.vcxproj -> C:\Users\Poggers\Documents\GitHub\Chat_App\Client\Debug\Host.exe

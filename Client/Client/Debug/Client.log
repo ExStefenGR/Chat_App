@@ -1,5 +1,5 @@
 ﻿  MainClient.cpp
   TCPClient.cpp
-C:\Users\Stefanos Triantafyll\Documents\GitHub\Chat_App\Client\Client\TCPClient.cpp(71,18): warning C5056: operator '!=': deprecated for array types
   Generating Code...
-  Client.vcxproj -> C:\Users\Stefanos Triantafyll\Documents\GitHub\Chat_App\Client\Debug\Client.exe
+C:\Users\Poggers\Documents\GitHub\Chat_App\Client\Client\TCPClient.cpp(34): warning C4715: 'TCPClient::Connect': not all control paths return a value
+  Client.vcxproj -> C:\Users\Poggers\Documents\GitHub\Chat_App\Client\Debug\Client.exe
