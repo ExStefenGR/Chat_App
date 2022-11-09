@@ -1,26 +1,15 @@
 #include "Host.h"
 
-Host::Host()
+void Host::HostMain()
 {
-}
-
-Host::~Host()
-{
-	SDL_Quit();
-}
-
-int Host::HostMain()
-{
-	if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
+	host.HostInitialise();
+	host.HostOpenSocket();
+	host.HostListenSocket();
+	while (true)
 	{
-		std::cout << "Could not initialise" << std::endl;
-		system("pause");
-		return 1;
+		std::thread t3(&TCP::HostSendMessage, host);
+		t3.detach();
+		std::thread t4(&TCP::HostReceiveMessage, host);
+		t4.join();
 	}
-	host.Initialise();
-	host.OpenSocket();
-	host.ListenSocket();
-	host.WelcomeMessage("Hellooooooooo");
-	std::thread t1(&TCPHost::ReceiveMessage, &host);
-	return 0;
 }

@@ -1,16 +1,14 @@
 #pragma once
-#include "TCPHost.h"
-#include <thread>
+#include "TCP.h"
 class Host
 {
 public:
 
-	Host();
-	~Host();
+	Host()=default;
+	~Host()=default;
 
-	int HostMain();
-
+	void HostMain();
 private:
-	TCPHost host{};
+	TCP host{};
 };
 

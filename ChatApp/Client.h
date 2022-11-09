@@ -1,18 +1,15 @@
 #pragma once
 #include <iostream>
-#include <SDL.h>
-#include <SDL_net.h>
-#include "TCPClient.h"
+#include "TCP.h"
 class Client
 {
 public:
 
-	Client();
-	~Client();
+	Client() = default;
+	~Client() = default;
 
-	int ClientMain();
-
+	void ClientMain();
 private:
-	TCPClient m_clientConnection{};
+	TCP client{};
 };
 

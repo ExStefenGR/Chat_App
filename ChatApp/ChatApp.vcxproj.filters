@@ -33,27 +33,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\Host.cpp">
-      <Filter>Source Files\Host</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\Client.cpp">
+    <ClCompile Include="Client.cpp">
       <Filter>Source Files\Client</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\source\repos\ChatApp\ChatApp\TCP.cpp">
+    <ClCompile Include="Host.cpp">
+      <Filter>Source Files\Host</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TCP.cpp">
       <Filter>Source Files\TCP</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\source\repos\ChatApp\ChatApp\Client.h">
+    <ClInclude Include="Client.h">
       <Filter>Header Files\Client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\source\repos\ChatApp\ChatApp\Host.h">
+    <ClInclude Include="Host.h">
       <Filter>Header Files\Host</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\source\repos\ChatApp\ChatApp\TCP.h">
+    <ClInclude Include="TCP.h">
       <Filter>Header Files\TCP</Filter>
     </ClInclude>
   </ItemGroup>
