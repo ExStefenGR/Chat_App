@@ -35,5 +35,5 @@ private:
 public:
 	void Shutdown();
 	IPaddress m_serverIp{};
-	SDLNet_SocketSet m_checker{};
+	//SDLNet_SocketSet m_checker{};  <--This would be useful to avoid blocking but there is no proper documentation
 };

@@ -52,18 +52,20 @@ bool TCP::HostSendMessage()
 		std::cout << "Error: message not sent" << std::endl;
 		return false;
 	}
+	std::cout << "Message sent!" << std::endl;
+	serverMessage.clear();
 	return true;
 }
 
 bool TCP::HostReceiveMessage()
 {
-	char m_message[2000]{};
-	if (SDLNet_TCP_Recv(m_clientSocket, m_message, 2000) <= 0)
+	char response[2000]{};
+	if (SDLNet_TCP_Recv(m_clientSocket, response, 2000) <= 0)
 	{
 		std::cout << "Failed to receive from Client" << std::endl;
 		return false;
 	}
-	std::cout << "Message received from Client: " << m_message << std::endl;
+	std::cout << "Message received from Client: " << response << std::endl;
 	return true;
 }
 
@@ -99,18 +101,20 @@ bool TCP::ClientSendMessage()
 		std::cout << "Failed to send to server" << std::endl;
 		return false;
 	}
+	std::cout << "Message sent!" << std::endl;
+	message.clear();
 	return true;
 }
 
 bool TCP::ClientReceiveMessage()
 {
-	char message[2000]{};
-	if (SDLNet_TCP_Recv(m_clientSocket, message, 2000) <= 0)
+	char response[2000]{};
+	if (SDLNet_TCP_Recv(m_clientSocket, response, 2000) <= 0)
 	{
 		std::cout << "Failed to receive from Server" << std::endl;
 		return false;
 	}
-	std::cout << "Message received from Server: " << message << std::endl;
+	std::cout << "Message received from Server: " << response << std::endl;
 	return true;
 }
 

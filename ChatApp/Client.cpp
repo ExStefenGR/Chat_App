@@ -9,9 +9,9 @@ void Client::ClientMain()
 	client.ClientInitialise();
 	while (true)
 	{
-		std::thread t1(&TCP::ClientReceiveMessage, client);
-		t1.detach();
-		std::thread t2(&TCP::ClientSendMessage, client);
-		t2.join();
+		std::thread t1(&TCP::ClientReceiveMessage,&client);
+		std::thread t2(&TCP::ClientSendMessage,&client);
+		t2.detach();
+		t1.join();
 	}
 }

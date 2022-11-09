@@ -4,12 +4,13 @@ void Host::HostMain()
 {
 	host.HostInitialise();
 	host.HostOpenSocket();
-	host.HostListenSocket();
+	std::thread t5(&TCP::HostListenSocket,&host);
+	t5.join();
 	while (true)
 	{
-		std::thread t3(&TCP::HostReceiveMessage, host);
-		t3.detach();
-		std::thread t4(&TCP::HostSendMessage, host);
-		t4.join();
+		std::thread t3(&TCP::HostReceiveMessage,&host);
+		std::thread t4(&TCP::HostSendMessage,&host);
+		t4.detach();
+		t3.join();
 	}
 }
