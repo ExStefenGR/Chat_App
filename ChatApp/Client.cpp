@@ -2,7 +2,6 @@
 
 void Client::ClientMain()
 {
-
 	if (SDL_Init(SDL_INIT_EVERYTHING) == -1)
 	{
 		std::cout << "Could not initialise" << std::endl;
@@ -10,9 +9,9 @@ void Client::ClientMain()
 	client.ClientInitialise();
 	while (true)
 	{
-		std::thread t2(&TCP::ClientSendMessage, client);
-		t2.detach();
 		std::thread t1(&TCP::ClientReceiveMessage, client);
-		t1.join();
+		t1.detach();
+		std::thread t2(&TCP::ClientSendMessage, client);
+		t2.join();
 	}
 }

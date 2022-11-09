@@ -7,9 +7,9 @@ void Host::HostMain()
 	host.HostListenSocket();
 	while (true)
 	{
-		std::thread t3(&TCP::HostSendMessage, host);
+		std::thread t3(&TCP::HostReceiveMessage, host);
 		t3.detach();
-		std::thread t4(&TCP::HostReceiveMessage, host);
+		std::thread t4(&TCP::HostSendMessage, host);
 		t4.join();
 	}
 }

@@ -44,10 +44,10 @@ void TCP::HostListenSocket()
 
 bool TCP::HostSendMessage()
 {
-	char message[2000];
-	std::cin.getline(message, 2000);
-	int length = sizeof(message) + 1;
-	if (SDLNet_TCP_Send(m_clientSocket, message, length) < length)
+	std::string serverMessage;
+	std::getline(std::cin, serverMessage);
+	int length = serverMessage.length() + 1;
+	if (SDLNet_TCP_Send(m_clientSocket, serverMessage.c_str(), length) < length)
 	{
 		std::cout << "Error: message not sent" << std::endl;
 		return false;
@@ -63,11 +63,8 @@ bool TCP::HostReceiveMessage()
 		std::cout << "Failed to receive from Client" << std::endl;
 		return false;
 	}
-	else
-	{
-		std::cout << "Message received from Client: " << m_message << std::endl;
-		return true;
-	}
+	std::cout << "Message received from Client: " << m_message << std::endl;
+	return true;
 }
 
 bool TCP::ClientInitialise()
@@ -94,10 +91,10 @@ bool TCP::ClientInitialise()
 
 bool TCP::ClientSendMessage()
 {
-	char message[2000];
-	std::cin.getline(message, 2000);
-	int length = sizeof(message) + 1;
-	if (SDLNet_TCP_Send(m_clientSocket, message, length) < length)
+	std::string message;
+	std::getline(std::cin,message);
+	int length = message.length() + 1;
+	if (SDLNet_TCP_Send(m_clientSocket, message.c_str(), length) < length)
 	{
 		std::cout << "Failed to send to server" << std::endl;
 		return false;
@@ -110,14 +107,11 @@ bool TCP::ClientReceiveMessage()
 	char message[2000]{};
 	if (SDLNet_TCP_Recv(m_clientSocket, message, 2000) <= 0)
 	{
-		std::cout << "Failed to receive from Client" << std::endl;
+		std::cout << "Failed to receive from Server" << std::endl;
 		return false;
 	}
-	else
-	{
-		std::cout << "Message received from Server: " << message << std::endl;
-		return true;
-	}
+	std::cout << "Message received from Server: " << message << std::endl;
+	return true;
 }
 
 void TCP::Shutdown()
