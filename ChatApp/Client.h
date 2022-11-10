@@ -1,15 +1,15 @@
 #pragma once
 #include <iostream>
+
 #include "TCP.h"
 class Client
 {
-public:
+  public:
+    Client() = default;
+    ~Client() = default;
 
-	Client() = default;
-	~Client() = default;
+    void ClientMain();
 
-	void ClientMain();
-private:
-	TCP client{};
+  private:
+    TCP client{};
 };
-

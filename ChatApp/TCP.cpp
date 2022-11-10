@@ -12,7 +12,7 @@ bool TCP::HostInitialise()
 		std::cout << "Error: " << SDLNet_GetError() << std::endl;
 		return false;
 	}
-	//Setting Sockets
+	// Setting Sockets
 	return true;
 }
 
@@ -27,7 +27,7 @@ bool TCP::HostOpenSocket()
 	{
 		std::cout << "Socket Open to clients" << std::endl;
 	}
-	return 0;
+	return false;
 }
 
 void TCP::HostListenSocket()
@@ -46,8 +46,7 @@ bool TCP::HostSendMessage()
 {
 	std::string serverMessage;
 	std::getline(std::cin, serverMessage);
-	int length = serverMessage.length() + 1;
-	if (SDLNet_TCP_Send(m_clientSocket, serverMessage.c_str(), length) < length)
+	if (int length = serverMessage.length() + 1; SDLNet_TCP_Send(m_clientSocket, serverMessage.c_str(), length) < length)
 	{
 		std::cout << "Error: message not sent" << std::endl;
 		return false;
@@ -59,10 +58,11 @@ bool TCP::HostSendMessage()
 
 bool TCP::HostReceiveMessage()
 {
-	char response[2000]{};
+	char response[2000]{0};
 	if (SDLNet_TCP_Recv(m_clientSocket, response, 2000) <= 0)
 	{
 		std::cout << "Failed to receive from Client" << std::endl;
+		Shutdown();
 		return false;
 	}
 	std::cout << "Message received from Client: " << response << std::endl;
@@ -74,12 +74,12 @@ bool TCP::ClientInitialise()
 	if (SDLNet_Init() == 1)
 	{
 		std::cout << "SDL net could not initialise" << std::endl;
-		return 1;
+		return true;
 	}
 	if (SDLNet_ResolveHost(&m_clientIp, "localhost", m_port) == -1)
 	{
 		std::cout << "could not establish connection with server" << std::endl;
-		return 1;
+		return true;
 	}
 	m_clientSocket = SDLNet_TCP_Open(&m_clientIp);
 	while (!m_clientSocket)
@@ -88,15 +88,14 @@ bool TCP::ClientInitialise()
 		m_clientSocket = SDLNet_TCP_Open(&m_clientIp);
 	}
 	std::cout << "Connection to server successful" << std::endl;
-	return 0;
+	return false;
 }
 
 bool TCP::ClientSendMessage()
 {
 	std::string message;
-	std::getline(std::cin,message);
-	int length = message.length() + 1;
-	if (SDLNet_TCP_Send(m_clientSocket, message.c_str(), length) < length)
+	std::getline(std::cin, message);
+	if (int length = message.length() + 1; SDLNet_TCP_Send(m_clientSocket, message.c_str(), length) < length)
 	{
 		std::cout << "Failed to send to server" << std::endl;
 		return false;
@@ -104,14 +103,16 @@ bool TCP::ClientSendMessage()
 	std::cout << "Message sent!" << std::endl;
 	message.clear();
 	return true;
+
 }
 
 bool TCP::ClientReceiveMessage()
 {
-	char response[2000]{};
+	char response[2000]{0};
 	if (SDLNet_TCP_Recv(m_clientSocket, response, 2000) <= 0)
 	{
 		std::cout << "Failed to receive from Server" << std::endl;
+		Shutdown();
 		return false;
 	}
 	std::cout << "Message received from Server: " << response << std::endl;

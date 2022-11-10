@@ -2,13 +2,12 @@
 #include "TCP.h"
 class Host
 {
-public:
+  public:
+    Host() = default;
+    ~Host() = default;
 
-	Host()=default;
-	~Host()=default;
+    void HostMain();
 
-	void HostMain();
-private:
-	TCP host{};
+  private:
+    TCP host{};
 };
-
